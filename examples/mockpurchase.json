@@ -1,0 +1,488 @@
+{
+  "uuid": "4094eb91-0ac2-40e9-a469-1d9a583e42d3",
+  "lastMigration": 33,
+  "name": "MockPurchase",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 4011,
+  "hostname": "127.0.0.1",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "11cb8aac-affa-4223-a21b-d523d8664b37",
+      "type": "http",
+      "documentation": "Editable example. Header x-mock-scenario selects a response; success is the default.",
+      "method": "post",
+      "endpoint": "purchases",
+      "responses": [
+        {
+          "uuid": "9e753418-0a9f-4a2f-af5a-41a19f66bdc0",
+          "body": "{\n  \"error\": \"rejected\",\n  \"message\": \"Example rejected response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "rejected",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "rejected",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "564e619f-482d-4f75-a838-71c43fd35076",
+          "body": "{\n  \"purchase_id\": \"purchase_example_001\",\n  \"status\": \"approved\",\n  \"amount\": 1999,\n  \"currency\": \"GBP\",\n  \"mock\": true\n}",
+          "latency": 2000,
+          "statusCode": 201,
+          "label": "slow",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "slow",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9671382e-3152-47f8-a96e-e66e6c6137db",
+          "body": "{\n  \"error\": \"unauthorised\",\n  \"message\": \"Example unauthorised response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "unauthorised",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "unauthorised",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "1fa3bf37-b3a9-43c1-a0ac-e4b1b26deb19",
+          "body": "{\n  \"error\": \"rate-limited\",\n  \"message\": \"Example rate-limited response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 429,
+          "label": "rate-limited",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            },
+            {
+              "key": "Retry-After",
+              "value": "30"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "rate-limited",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "4e5a240f-728b-45e2-a23f-9ca1fbdbbbf4",
+          "body": "{\n  \"error\": \"unavailable\",\n  \"message\": \"Example unavailable response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 503,
+          "label": "unavailable",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "unavailable",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "d8b1166c-a163-4106-a05b-c489e38df995",
+          "body": "{\n  \"purchase_id\": \"purchase_example_001\",\n  \"status\": \"approved\",\n  \"amount\": 1999,\n  \"currency\": \"GBP\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "8377db18-5ee7-43c3-a41b-ac5be6f742a4",
+      "type": "http",
+      "documentation": "Editable example. Header x-mock-scenario selects a response; success is the default.",
+      "method": "post",
+      "endpoint": "refunds",
+      "responses": [
+        {
+          "uuid": "a63cdde8-9b77-4635-ad25-a147916765dc",
+          "body": "{\n  \"error\": \"rejected\",\n  \"message\": \"Example rejected response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 422,
+          "label": "rejected",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "rejected",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "f461f54c-9f2f-4264-a201-525718e8fe1c",
+          "body": "{\n  \"refund_id\": \"refund_example_001\",\n  \"purchase_id\": \"purchase_example_001\",\n  \"status\": \"refunded\",\n  \"mock\": true\n}",
+          "latency": 2000,
+          "statusCode": 201,
+          "label": "slow",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "slow",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "b047f947-e2c3-4c4b-a4ed-25ec31b31132",
+          "body": "{\n  \"error\": \"unauthorised\",\n  \"message\": \"Example unauthorised response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "unauthorised",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "unauthorised",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "1ec52cbb-f978-43f7-a1df-ff5e2ef6bc3d",
+          "body": "{\n  \"error\": \"rate-limited\",\n  \"message\": \"Example rate-limited response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 429,
+          "label": "rate-limited",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            },
+            {
+              "key": "Retry-After",
+              "value": "30"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "rate-limited",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "93852a67-47a5-4baf-afbc-61f651d6a7c8",
+          "body": "{\n  \"error\": \"unavailable\",\n  \"message\": \"Example unavailable response\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 503,
+          "label": "unavailable",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "x-mock-scenario",
+              "value": "unavailable",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "fe0b5157-715e-48b8-ab92-8e3ffd273a52",
+          "body": "{\n  \"refund_id\": \"refund_example_001\",\n  \"purchase_id\": \"purchase_example_001\",\n  \"status\": \"refunded\",\n  \"mock\": true\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "success",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mocktoon-Example",
+              "value": "true"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "11cb8aac-affa-4223-a21b-d523d8664b37"
+    },
+    {
+      "type": "route",
+      "uuid": "8377db18-5ee7-43c3-a41b-ac5be6f742a4"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [],
+  "callbacks": []
+}

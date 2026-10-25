@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mockship",
+    "name": "MockShip",
+    "port": 4010,
+    "description": "A pretend shipping provider: create a shipment and inspect canned tracking.",
+    "endpoints": [
+      "POST /shipments",
+      "GET /tracking/:trackingNumber"
+    ]
+  },
+  {
+    "id": "mockpurchase",
+    "name": "MockPurchase",
+    "port": 4011,
+    "description": "A pretend purchase gateway: approvals, declines and canned refunds. No money moves.",
+    "endpoints": [
+      "POST /purchases",
+      "POST /refunds"
+    ]
+  },
+  {
+    "id": "mocksend",
+    "name": "MockSend",
+    "port": 4012,
+    "description": "A pretend CRM, warehouse or notification destination. Captures submitted payloads locally.",
+    "endpoints": [
+      "POST /deliveries",
+      "POST /webhooks"
+    ]
+  },
+  {
+    "id": "mockstock",
+    "name": "MockStock",
+    "port": 4013,
+    "description": "A pretend stock service: availability and canned reservations.",
+    "endpoints": [
+      "GET /products/:sku",
+      "POST /reservations"
+    ]
+  },
+  {
+    "id": "mockauth",
+    "name": "MockAuth",
+    "port": 4014,
+    "description": "A pretend authentication API. Tokens are fixture strings, not real credentials or signed JWTs.",
+    "endpoints": [
+      "POST /login",
+      "GET /me"
+    ]
+  }
+]

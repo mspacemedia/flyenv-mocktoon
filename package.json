@@ -1,0 +1,16 @@
+{
+  "name": "flyenv-mocktoon",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Editable mock API examples and Mockoon service management for FlyEnv",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/develop.mjs build",
+    "test": "node scripts/develop.mjs test",
+    "test:runtime": "node scripts/develop.mjs runtime"
+  }
+}

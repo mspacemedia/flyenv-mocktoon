@@ -1,0 +1,8 @@
+{
+  "name": "flyenv-mocktoon-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mockoon/cli": "9.9.0"
+  }
+}

@@ -1,0 +1,8 @@
+FlyEnv Mocktoon is an independent community plugin by mspacemedia.
+It is not an official FlyEnv or Mockoon product.
+
+The original example configurations and this integration are MIT licensed.
+Mockoon CLI is installed separately from npm using a pinned dependency lock.
+Mockoon and its dependencies retain their respective licenses and notices.
+Mockoon: https://github.com/mockoon/mockoon (MIT).
+FlyEnv host framework: https://github.com/xpf0000/FlyEnv (MIT).
