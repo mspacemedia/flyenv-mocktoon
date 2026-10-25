@@ -1,6 +1,6 @@
 {
   "name": "flyenv-mocktoon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Editable mock API examples and Mockoon service management for FlyEnv",

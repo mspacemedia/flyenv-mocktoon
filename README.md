@@ -90,3 +90,7 @@ npm run build -- --flyenv-root /path/to/FlyEnv
 Build tools require Node.js 22+. `test:runtime` downloads the pinned npm runtime into an isolated test directory and makes local HTTP requests; it uses no external accounts or user project files. `build` produces `dist/mocktoon-0.1.0.flyenv-plugin` and its matching checksum registry. Distribute the archive and registry from the same build.
 
 Windows runtime validation is performed locally. macOS/Linux launch and npm-path handling have focused tests; native acceptance on those operating systems remains outstanding. Contributions and better example packs are welcome.
+
+## Shared community registry
+
+Add `https://raw.githubusercontent.com/mspacemedia/flyenv-plugins/main/registry.json` in FlyEnv Settings → Plugin Market to browse API Client, Mocktoon and Stripe CLI together. This plugin prefers the API Tools section on updated hosts and retains its existing category on older hosts.

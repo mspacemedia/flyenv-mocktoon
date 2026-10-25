@@ -4,7 +4,7 @@
     {
       "id": "mocktoon",
       "name": "FlyEnv Mocktoon",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": {
         "en": "Local mock APIs powered by Mockoon, with editable MockShip, MockPurchase, MockSend, MockStock and MockAuth examples.",
         "zh": "基于 Mockoon 的本地模拟 API，包含可编辑的发货、购买、发送、库存和认证示例。"
@@ -23,7 +23,8 @@
           "Windows",
           "macOS",
           "Linux"
-        ]
+        ],
+        "preferredModuleType": "apiTools"
       },
       "platforms": [
         "Windows",
@@ -31,8 +32,8 @@
         "Linux"
       ],
       "artifact": {
-        "url": "https://github.com/mspacemedia/flyenv-mocktoon/releases/download/v0.1.0/mocktoon-0.1.0.flyenv-plugin",
-        "sha256": "6f5b16ccf4e555bbe52c64c3796b8bdc0e2cebf124113282f4fd5e8c4450a735"
+        "url": "https://github.com/mspacemedia/flyenv-mocktoon/releases/download/v0.1.1/mocktoon-0.1.1.flyenv-plugin",
+        "sha256": "6ec8ccc6e4f87f076fe6abcc0eba755e45bf8e7fcba8d554d0784a72cf0fa3ec"
       },
       "official": false
     }

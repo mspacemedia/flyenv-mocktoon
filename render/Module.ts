@@ -3,6 +3,7 @@ import type { AppModuleItem } from '@/core/type'
 
 export default {
   moduleType: 'other',
+  preferredModuleType: 'apiTools',
   typeFlag: 'mocktoon',
   label: 'Mocktoon',
   icon: import('../assets/mocktoon.svg?raw'),
